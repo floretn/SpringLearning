@@ -1,4 +1,4 @@
-package ru.mephi.spring.java_code;
+package ru.mephi.spring.core.java_code;
 
 import org.springframework.stereotype.Component;
 

@@ -10,26 +10,26 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="testBean"
-          class="ru.mephi.spring.test.TestBean">
+          class="ru.mephi.spring.core.test.TestBean">
         <constructor-arg value="Ivan"/>
     </bean>
 
     <bean id="classicMusicBean"
-          class="ru.mephi.spring.xml.ClassicMusic"
+          class="ru.mephi.spring.core.xml.ClassicMusic"
           factory-method="factory">
     </bean>
 
     <bean id="jazzBean"
-          class="ru.mephi.spring.xml.Jazz"
+          class="ru.mephi.spring.core.xml.Jazz"
           destroy-method="destroy">
     </bean>
 
     <bean id="rockBean"
-          class="ru.mephi.spring.xml.RockMusic">
+          class="ru.mephi.spring.core.xml.RockMusic">
     </bean>
 
     <bean id="musicPlayerBean"
-          class="ru.mephi.spring.xml.MusicPlayer"
+          class="ru.mephi.spring.core.xml.MusicPlayer"
           scope="prototype"
           init-method="init"
           destroy-method="destroy"> <!--Не работает, хы-хы-->

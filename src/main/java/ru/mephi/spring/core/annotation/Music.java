@@ -1,4 +1,4 @@
-package ru.mephi.spring.xml;
+package ru.mephi.spring.core.annotation;
 
 public interface Music {
     default void play() {

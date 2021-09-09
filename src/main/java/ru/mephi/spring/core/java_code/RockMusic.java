@@ -1,4 +1,4 @@
-package ru.mephi.spring.annotation;
+package ru.mephi.spring.core.java_code;
 
 import org.springframework.stereotype.Component;
 

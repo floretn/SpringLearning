@@ -1,4 +1,4 @@
-package ru.mephi.spring.java_code;
+package ru.mephi.spring.core.annotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;

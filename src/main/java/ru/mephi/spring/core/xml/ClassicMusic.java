@@ -1,4 +1,4 @@
-package ru.mephi.spring.xml;
+package ru.mephi.spring.core.xml;
 
 public class ClassicMusic implements Music{
 

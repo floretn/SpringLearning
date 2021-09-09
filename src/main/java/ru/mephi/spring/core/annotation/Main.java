@@ -1,4 +1,4 @@
-package ru.mephi.spring.annotation;
+package ru.mephi.spring.core.annotation;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

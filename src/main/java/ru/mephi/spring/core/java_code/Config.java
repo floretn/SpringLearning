@@ -1,9 +1,9 @@
-package ru.mephi.spring.java_code;
+package ru.mephi.spring.core.java_code;
 
 import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScan("ru.mephi.spring.java_code")
+@ComponentScan("ru.mephi.spring.core.java_code")
 @PropertySource("classpath:musicPlayer.properties")
 public class Config {
 

@@ -1,8 +1,5 @@
-package ru.mephi.spring.java_code;
+package ru.mephi.spring.core.xml;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class RockMusic implements Music {
     @Override
     public void play() {

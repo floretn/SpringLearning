@@ -1,4 +1,4 @@
-package ru.mephi.spring.test;
+package ru.mephi.spring.core.test;
 
 public class TestBean {
 

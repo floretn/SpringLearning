@@ -1,4 +1,4 @@
-package ru.mephi.spring.xml;
+package ru.mephi.spring.core.xml;
 
 import java.util.List;
 
