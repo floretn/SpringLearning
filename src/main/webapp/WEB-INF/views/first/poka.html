@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Poka!</title>
 </head>
 <body>
 
-<p>Poka world!</p>
-<a href="/first/hello">Hello!</a>
+<p th:text="'Poka, ' + ${surname} + ' ' + ${name} + '!'"></p>
+
+<a th:href="'/first/hello?name=' + ${name} + '&surname=' + ${surname}">Hello!</a>
 </br>
 <a href="/second/exit">Exit!</a>
 

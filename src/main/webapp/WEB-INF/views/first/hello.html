@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Hello!</title>
 </head>
 <body>
 
-<p>Hello world!</p>
+<form>
 
-<a href="/first/poka">Poka!</a>
+<p th:text="'Hello, ' + ${surname} + ' ' + ${name} + '!'"></p>
+
+<a th:href="'/first/poka?name=' + ${name} + '&surname=' + ${surname}">Poka!</a>
 </br>
 <a href="/second/exit">Exit!</a>
-
+</form>
 </body>
 </html>
