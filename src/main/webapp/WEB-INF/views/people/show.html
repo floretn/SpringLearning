@@ -7,6 +7,8 @@
 <body>
 
 <p th:text="'User: ' + ${person.getName} + ' ' + ${person.getSurname}">user</p>
+<p th:text="'Age: ' + ${person.getAge}">age</p>
+<p th:text="'Email: ' + ${person.getEmail}">email</p>
 <hr/>
 <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}" >
     <input type="submit" value="Delete">
