@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class PeopleDAO {
+public class PeopleDAO implements DAOPeople {
 
     private static int cnt = 3;
 
@@ -16,19 +16,23 @@ public class PeopleDAO {
             (new Person(1, "Name", "SurName", 12, "nrje@vnrj.ru")
             , new Person(2, "N1", "N2", 49, "email@email.em")));
 
+    @Override
     public List<Person> getAll() {
         return PEOPLE;
     }
 
+    @Override
     public Person getPerson(int id) {
         return PEOPLE.stream().filter(p -> p.getId() == id).findAny().orElse(null);
     }
 
+    @Override
     public void addPerson(Person person) {
         person.setId(cnt++);
         PEOPLE.add(person);
     }
 
+    @Override
     public void updatePerson(int id, Person person) {
         Person p = getPerson(id);
         p.setName(person.getName());
@@ -37,6 +41,7 @@ public class PeopleDAO {
         p.setEmail(person.getEmail());
     }
 
+    @Override
     public void deletePerson(int id) {
         PEOPLE.removeIf(p -> p.getId() == id);
     }

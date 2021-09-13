@@ -1,11 +1,12 @@
 package ru.mephi.spring.mvc.java_code.rest.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.mephi.spring.mvc.java_code.rest.dao.PeopleDAO;
+import ru.mephi.spring.mvc.java_code.rest.dao.DAOPeople;
 import ru.mephi.spring.mvc.java_code.rest.models.Person;
 
 import javax.validation.Valid;
@@ -14,10 +15,10 @@ import javax.validation.Valid;
 @RequestMapping("/people")
 public class PeopleController {
 
-    private final PeopleDAO peopleDAO;
+    private final DAOPeople peopleDAO;
 
     @Autowired
-    public PeopleController(PeopleDAO peopleDAO) {
+    public PeopleController(@Qualifier(value = "peopleTemplateDAO") DAOPeople peopleDAO) {
         this.peopleDAO = peopleDAO;
     }
 
