@@ -1,9 +1,9 @@
-package ru.mephi.boot.services;
+package ru.mephi.boot.services.people;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.mephi.boot.models.Person;
-import ru.mephi.boot.repositories.PeopleRepository;
+import ru.mephi.boot.dao.models.Person;
+import ru.mephi.boot.dao.repositories.PeopleRepository;
 import java.util.List;
 
 @Service

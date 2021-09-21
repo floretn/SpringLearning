@@ -1,4 +1,4 @@
-package ru.mephi.boot.models;
+package ru.mephi.boot.dao.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

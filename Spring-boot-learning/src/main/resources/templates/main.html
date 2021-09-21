@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+    <h3 th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</h3>
+    <a href="/user/example">For Users</a>
+    <br/>
+    <a href="/admin/example">For Admins</a>
+    <br/>
+    <a href="/people">People</a>
+    <br/>
+    <form th:action="@{/logout}" method="post">
+        <div>
+            <input type="submit" value="Logout">
+        </div>
+    </form>
+</body>
+</html>

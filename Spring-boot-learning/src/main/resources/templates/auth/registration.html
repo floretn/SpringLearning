@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/auth/registration}" th:object="${user}">
+    <label for="middleName">Фамилия: </label>
+    <input id="middleName" type="text" th:field="*{middleName}">
+    <div style="color:red" th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}">Middle Name Error</div>
+
+    <br/>
+
+    <label for="firstName">Имя: </label>
+    <input id=firstName type="text" th:field="*{firstName}">
+    <div style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</div>
+
+    <br/>
+
+    <label for="lastName">Отчество: </label>
+    <input id=lastName type="text" th:field="*{lastName}">
+    <div style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</div>
+
+    <br/>
+
+    <label for="phone">Телефон: </label>
+    <input id=phone type="text" th:field="*{phone}">
+    <div style="color:red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Phone Error</div>
+
+    <br/>
+
+    <label for="email">Email: </label>
+    <input id=email type="text" th:field="*{email}">
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+
+    <br/>
+
+    <label for="username">Username: </label>
+    <input id=username type="text" th:field="*{username}">
+    <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</div>
+
+    <br/>
+
+    <label for="pwd1">Password: </label>
+    <input id=pwd1 type="password" th:field="*{password}">
+    <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
+
+    <br/>
+
+    <label for="pwd2">Confirm your password: </label>
+    <input id=pwd2 type="password" th:field="*{passwordConfirm}">
+    <div style="color:red" th:if="${#fields.hasErrors('passwordConfirm')}" th:errors="*{passwordConfirm}">PasswordConfirm Error</div>
+
+    <div style="color:red" th:text="${passwordError}"></div>
+    <div style="color:red" th:text="${usernameError}"></div>
+
+    <br/>
+
+    <input type="submit" value="Registration!">
+</form>
+<a href="/auth/login">Login</a>
+</body>
+</html>

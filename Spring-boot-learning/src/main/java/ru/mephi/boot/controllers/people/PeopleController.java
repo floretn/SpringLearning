@@ -1,19 +1,19 @@
-package ru.mephi.boot.controllers;
+package ru.mephi.boot.controllers.people;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.mephi.boot.models.Person;
-import ru.mephi.boot.services.PeopleService;
+import ru.mephi.boot.dao.models.Person;
+import ru.mephi.boot.services.people.PeopleService;
 
 import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/people")
 public class PeopleController {
-
 
     private final PeopleService peopleService;
 
@@ -34,12 +34,14 @@ public class PeopleController {
         return "people/show";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/new")
     public String newPerson(Model model) {
         model.addAttribute("person", new Person()); // Можно заменить на "@ModelAttribute("person") Person person" в параметрах
         return "people/new";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping()
     public String addPerson(@Valid @ModelAttribute("person") Person person, BindingResult bindingResult) {
         System.out.println(bindingResult);
@@ -50,12 +52,14 @@ public class PeopleController {
         return "redirect:/people";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
         model.addAttribute("person", peopleService.getPerson(id));
         return "people/edit";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PatchMapping("/{id}")
     public String update(@Valid @ModelAttribute("person") Person person, BindingResult bindingResult
             , @PathVariable("id") int id) {
@@ -66,6 +70,7 @@ public class PeopleController {
         return "redirect:/people";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
         peopleService.deletePerson(id);
