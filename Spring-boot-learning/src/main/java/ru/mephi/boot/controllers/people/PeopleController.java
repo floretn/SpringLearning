@@ -44,7 +44,6 @@ public class PeopleController {
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping()
     public String addPerson(@Valid @ModelAttribute("person") Person person, BindingResult bindingResult) {
-        System.out.println(bindingResult);
         if (bindingResult.hasErrors()) {
             return "people/new";
         }

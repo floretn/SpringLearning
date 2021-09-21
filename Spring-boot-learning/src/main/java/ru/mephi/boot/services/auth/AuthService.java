@@ -15,6 +15,10 @@ public class AuthService implements UserDetailsService {
 
     @Override
     public UserEntity loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByUsername(username);
+        UserEntity user = userRepository.findByUsername(username);
+        if (user == null) {
+            return new UserEntity();
+        }
+        return user;
     }
 }
