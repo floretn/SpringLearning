@@ -1,4 +1,4 @@
-#Весеннее Обучение!!!
+# Весеннее Обучение!!!
 1) В папке <a href="https://github.com/floretn/SpringLearning/tree/master/Spring-Core-MVC" target="_blank">Spring-Core-MVC</a> изучение весны
 <a href="https://www.youtube.com/watch?v=5ePo08sqcpk&list=PLAma_mKffTOR5o0WNHnY0mTjKxnCgSXrZ">
     по этому курсу</a>. 
