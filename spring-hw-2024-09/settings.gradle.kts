@@ -1,9 +1,9 @@
 rootProject.name = "sofronov-home-tasks"
 
 pluginManagement {
-//    repositories {
-//        mavenCentral()
-//    }
+    repositories {
+        mavenCentral()
+    }
 
     val dependencyManagementVersion: String by settings
     val springframeworkBootVersion: String by settings

@@ -6,7 +6,7 @@ plugins {
 	idea
 	id("io.spring.dependency-management")
 	id("org.springframework.boot") apply false
-	id("com.diffplug.spotless")
+	id("com.diffplug.spotless")  apply false
 }
 
 idea {
@@ -22,9 +22,9 @@ idea {
 allprojects {
 	group = "ru.nspk"
 
-//	repositories {
-//		mavenCentral()
-//	}
+	repositories {
+		mavenCentral()
+	}
 
 	val testcontainersBomVersion: String by project
 	val findbugsJsr305: String by project
@@ -59,7 +59,7 @@ subprojects {
 	apply<com.diffplug.gradle.spotless.SpotlessPlugin>()
 	configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 		java {
-			palantirJavaFormat('2.39.0')
+			palantirJavaFormat("2.38.0")
 		}
 	}
 
