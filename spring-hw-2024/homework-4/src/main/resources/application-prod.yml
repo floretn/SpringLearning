@@ -1,0 +1,6 @@
+account:
+  balance:
+    initial-value: 0
+    allow-negative: false
+  card:
+    ps: MIR

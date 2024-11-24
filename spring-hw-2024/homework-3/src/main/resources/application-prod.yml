@@ -1,0 +1,4 @@
+account:
+  balance:
+    initial: 0
+    allow-negative: false
